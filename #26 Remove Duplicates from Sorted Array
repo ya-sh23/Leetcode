@@ -1,0 +1,25 @@
+#1
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        replace=1
+        for i in range(1,len(nums)):
+            if nums[i-1] != nums[i]:
+                nums[replace] = nums[i]
+                replace += 1
+        return replace
+        
+#2
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i=1
+        while i < len(nums):
+            if nums[i]==nums[i-1]:
+                nums.pop(i)
+            else:
+                i+=1
+        return len(nums)
+    #3 
+    class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        nums[:] = sorted(set(nums))
+        return len(nums)
